@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include <sys/types.h>
 #include <string.h>
 #include <stdlib.h>
 #include "export.h"
-#include <ctype.h>
 #define PERMS 0666 
 #define path "/var/lib/nfs/etab"
 #define versionpath "/proc/fs/nfsd/versions"     
@@ -64,7 +62,7 @@ struct nfs* get_export_list(int *len)
 }
 char* permission(char* ch1,char buf[],int i)
 {
-    unsigned int c=0;  
+    int c=0;  
     while (buf[i]!='\n')
     {
       if (buf[i]==ch1[c] && ch1[c]!='\0' && buf[i]!=' ')
@@ -83,6 +81,7 @@ char* permission(char* ch1,char buf[],int i)
 char* getversion()
 {
    int n,f1;
+   char ch1[40];
    char *buf = (char*) malloc(50*sizeof(char));
    if ((f1 = open(versionpath,O_RDONLY, 0)) == -1)
         error("cp: can't open ");

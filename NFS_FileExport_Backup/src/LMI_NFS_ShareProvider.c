@@ -34,23 +34,21 @@ static CMPIStatus LMI_NFS_ShareEnumInstances(
     const CMPIObjectPath* cop,
     const char** properties)
 {
-
-
     LMI_NFS_Share s;
     struct stat st;
     LMI_NFS_Share_Init(&s, _cb, KNameSpace (cop));
-    int i;
+    int i,length;
     char buf[256];
     struct nfs *exportinfo = malloc(sizeof(struct nfs));
-    exportinfo=get_export_list();
+    exportinfo=get_export_list(&length);
     for(i=0;i<exportinfo->countshare;i++)
     {
        snprintf(buf, sizeof buf,"%s:%d[of(%d)]", "NFSShare",i+1, exportinfo->countshare);
         LMI_NFS_Share_Set_InstanceID(&s, buf);
         LMI_NFS_Share_Set_ElementName(&s, "Nfs Share");
-        LMI_NFS_Share_Set_Name(&s, exportinfo->share[i]);
+        LMI_NFS_Share_Set_Name(&s, exportinfo->share[i][2]);
     	LMI_NFS_Share_Init_OperationalStatus(&s, 1);
-            	if ( stat(exportinfo->share[i], &st) == 0 )
+            	if ( stat(exportinfo->share[i][1], &st) == 0 )
         {
 	    if(S_ISDIR(st.st_mode))
                 LMI_NFS_Share_Set_SharingDirectory(&s, 1);
