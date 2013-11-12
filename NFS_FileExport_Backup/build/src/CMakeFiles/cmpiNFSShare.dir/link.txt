@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC -std=c99 -Wall -pedantic -g -Wextra -Wno-unused-parameter -Wformat -Wparentheses -Wl,--no-undefined    -shared -Wl,-soname,libcmpiNFSShare.so -o libcmpiNFSShare.so CMakeFiles/cmpiNFSShare.dir/LMI_NFS_ShareProvider.c.o CMakeFiles/cmpiNFSShare.dir/LMI_ExportedFileShareSettingProvider.c.o CMakeFiles/cmpiNFSShare.dir/LMI_NFSElementSettingDataProvider.c.o -lkonkret 

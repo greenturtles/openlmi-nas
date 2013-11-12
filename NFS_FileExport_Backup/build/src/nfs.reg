@@ -1,0 +1,18 @@
+[LMI_NFS_Share]
+   provider: LMI_NFS_Share
+   location: cmpiNFSShare
+   type: instance method
+   namespace: root/cimv2
+#
+[LMI_ExportedFileShareSetting]
+   provider: LMI_ExportedFileShareSetting
+   location: cmpiNFSShare
+   type: instance method
+   namespace: root/cimv2
+#
+[LMI_NFSElementSettingData]
+   provider: LMI_NFSElementSettingData
+   location: cmpiNFSShare
+   type: instance association
+   namespace: root/cimv2
+#

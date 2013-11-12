@@ -61,9 +61,9 @@ static CMPIStatus LMI_ExportedFileShareSettingEnumInstances(
                               break;
                 case 5     :  LMI_ExportedFileShareSetting_Set_OtherEnabledState(&s,exportinfo->share[i][j]);
                               break;
-            }                        
-     KReturnInstance(cr, s);
+            }      
       } 
+     KReturnInstance(cr, s);
     }
     CMReturn(CMPI_RC_OK);
 }

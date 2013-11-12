@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sunil/kumar/My_Repo/NFS_FileExport_Backup/src/LMI_ExportedFileShareSettingProvider.c
+konkret/konkret.h
+-
+LMI_ExportedFileShareSetting.h
+/home/sunil/kumar/My_Repo/NFS_FileExport_Backup/src/LMI_ExportedFileShareSetting.h
+sys/stat.h
+-
+export.h
+/home/sunil/kumar/My_Repo/NFS_FileExport_Backup/src/export.h
+
+/home/sunil/kumar/My_Repo/NFS_FileExport_Backup/src/export.h
+
+src/LMI_ExportedFileShareSetting.h
+konkret/konkret.h
+-
+strings.h
+-
+
